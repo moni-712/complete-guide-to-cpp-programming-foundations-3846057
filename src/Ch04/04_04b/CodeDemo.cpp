@@ -12,20 +12,24 @@ using TimePoint = std::chrono::time_point<Clock>;
 using Duration = std::chrono::duration<double>;
 
 int main(){
-    TimePoint start, end;
-    Duration elapsed_seconds;
+    TimePoint *start, *end;
+    Duration *elapsed_seconds = new Duration();
     std::string input;
 
-    start = Clock::now();
+    start = new TimePoint(Clock::now());
 
     std::cout << "Type 'start' as quickly as you can and hit ENTER: " << std::flush;
     std::cin >> input;
 
-    end = Clock::now();
-    elapsed_seconds = end - start;
+    end = new TimePoint(Clock::now());
+    *elapsed_seconds = *end - *start;
 
-    std::cout << "Reaction time: " << elapsed_seconds.count() << "s" << std::endl;
-    
+    std::cout << "Reaction time: " << elapsed_seconds->count() << "s" << std::endl; // To access class functions of a pointer, use the right bound error to simulataneously dereference the pointer and access the function.
+
+    delete start; // Make sure to delete pointers after using them
+    delete end;
+    delete elapsed_seconds;
+
     std::cout << std::endl << std::endl;
     return 0;
 }
