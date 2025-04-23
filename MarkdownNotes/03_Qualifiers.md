@@ -1,6 +1,6 @@
 # C++ Qualifiers
 
-_**Before we start**_
+***Before we start***
 
 As you read through this article, you’ll come across some code snippets containing elements that we will cover in more detail later in the course. Don't worry if some of these concepts seem unfamiliar right now. Take a deep breath and relax. We'll explore each of these topics as we progress. Trust and enjoy the learning process!
 
@@ -209,7 +209,7 @@ int main(){
 ~~~
 
 In this example, the `static` member `enemyCount` is shared across all `Enemy` instances, keeping track of the total number of `Enemy` objects created. The class constructor (identified in the code) increases this count every time a new enemy is created.
-The `showEnemyCount` function demonstrates how to access the `static` member. Notice that `static` member functions are accessed as members of the class, not of objects. That’s why we use the _scope resolution operator_ (double colon) in `Enemy::showEnemyCount()`.
+The `showEnemyCount` function demonstrates how to access the `static` member. Notice that `static` member functions are accessed as members of the class, not of objects. That’s why we use the *scope resolution operator* (double colon) in `Enemy::showEnemyCount()`.
 
 Also notice that `static` members are available to our code even when no objects of the class have been defined. That’s why we need to use the class name and the scope resolution operator.
 

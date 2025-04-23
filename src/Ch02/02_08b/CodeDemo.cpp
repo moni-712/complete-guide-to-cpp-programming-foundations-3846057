@@ -1,18 +1,20 @@
 // Complete Guide to C++ Programming Foundations
 // Exercise 02_08
-// Enumerations, by Eduardo Corpeño 
+// Enumerations, by Monika Phipps
 
 #include <iostream>
 #include <cstdint>
 
-enum asset_type {texture, sound, animation, script};
+enum class asset_type {texture, sound, animation, script};
+enum class menu_section {background, music, sound, controls, texture};
 
 int main(){
-    int asset_value;
+    int sound = 8;
+    asset_type asset_value;
 
-    asset_value = sound;
+    asset_value = asset_type::sound;
 
-    std::cout << "asset_value = " << asset_value << std::endl;
+    std::cout << "asset_value = " << (int) asset_value << std::endl;
 
     std::cout << std::endl << std::endl;
     return 0;
